@@ -18,7 +18,7 @@ public class Main {
             return arr[n] = 2;
         }
         if (arr[n] != 0) {
-            return 0;
+            return arr[n];
         }
         arr[n] = getN(n / 3) + getN(n - 1);
         return arr[n];
