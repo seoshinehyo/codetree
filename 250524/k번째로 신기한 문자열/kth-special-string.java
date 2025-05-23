@@ -12,10 +12,11 @@ public class Main {
 
         for (int i = 0; i < n; i++) {
             String str = br.readLine();
-            if (str.substring(0,t.length()).equals(t)) {
+            if (str.startsWith(t)) {
                 list.add(str);
             }
         }
+
         Collections.sort(list);
         System.out.print(list.get(k - 1));
     }
