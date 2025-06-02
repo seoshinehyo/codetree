@@ -10,6 +10,6 @@ public class Main {
         int c = Integer.parseInt(st.nextToken());
         int d = Integer.parseInt(st.nextToken());
 
-        System.out.print((c * 60 + 1) - (a * 60 + 5));
+        System.out.print((c * 60 + d) - (a * 60 + b));
     }
 }
