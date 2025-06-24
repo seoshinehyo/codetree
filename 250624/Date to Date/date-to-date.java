@@ -11,6 +11,17 @@ public class Main {
         int m2 = Integer.parseInt(st.nextToken());
         int d2 = Integer.parseInt(st.nextToken());
 
-        System.out.print(d2 + (num_of_days[m1] - d1 + 1));
+        int days = 0;
+
+        if (m1 == m2) {
+            days = d2 - d1 + 1;
+        } else {
+            days += num_of_days[m1] - d1 + 1;
+            for (int m = m1 + 1; m < m2; m++) {
+                days += num_of_days[m];
+            }
+            days += d2;
+        }
+        System.out.println(days);
     }
 }
