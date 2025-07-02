@@ -6,7 +6,7 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
         int n = Integer.parseInt(br.readLine());
-        int[] arr = new int[100];
+        int[] arr = new int[101];
 
         for (int i = 0; i < n; i++) {
             st = new StringTokenizer(br.readLine());
@@ -20,7 +20,7 @@ public class Main {
 
         int max = 0;
 
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 101; i++) {
             if (max < arr[i]) {
                 max = arr[i];
             }
