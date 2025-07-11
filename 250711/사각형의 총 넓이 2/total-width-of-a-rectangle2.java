@@ -4,33 +4,31 @@ import java.io.*;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st;
-        int n = Integer.parseInt(br.readLine());
-        final int OFFSET = 100;
-        int[][] arr = new int[n + OFFSET][n + OFFSET];
-        
+        int N = Integer.parseInt(br.readLine());
 
-        for (int i = 0; i < n; i++) {
+        final int OFFSET = 100;
+        final int SIZE = 2 * OFFSET + 1;
+        int[][] arr = new int[SIZE][SIZE];
+
+        StringTokenizer st;
+        for (int i = 0; i < N; i++) {
             st = new StringTokenizer(br.readLine());
             int x1 = Integer.parseInt(st.nextToken());
             int y1 = Integer.parseInt(st.nextToken());
             int x2 = Integer.parseInt(st.nextToken());
             int y2 = Integer.parseInt(st.nextToken());
 
-            for (int j = x1; j < x2; j++) {
-                for (int k = y1; k < y2; k++) {
-                    arr[j][k] += 1;
+            for (int x = x1 + OFFSET; x < x2 + OFFSET; x++) {
+                for (int y = y1 + OFFSET; y < y2 + OFFSET; y++) {
+                    arr[x][y] = 1;
                 }
             }
         }
 
         int count = 0;
-
-        for (int i = 0; i < n + OFFSET; i++) {
-            for (int j = 0; j < n + OFFSET; j++) {
-                if (arr[i][j] >= 1) {
-                    count++;
-                }
+        for (int i = 0; i < SIZE; i++) {
+            for (int j = 0; j < SIZE; j++) {
+                count += arr[i][j];
             }
         }
 
