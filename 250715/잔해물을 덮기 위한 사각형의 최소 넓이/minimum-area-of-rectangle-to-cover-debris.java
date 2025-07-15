@@ -50,6 +50,10 @@ public class Main {
             }
         }
 
-        System.out.println((xMax - xMin + 1) * (yMax - yMin + 1));
+        if (xMax == Integer.MIN_VALUE) {
+            System.out.println(0);
+        } else {
+            System.out.println((xMax - xMin + 1) * (yMax - yMin + 1));
+        }
     }
 }
