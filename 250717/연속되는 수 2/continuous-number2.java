@@ -11,11 +11,11 @@ public class Main {
             arr[i] = Integer.parseInt(br.readLine());
         }
 
-        int count = 0;
-        int max = 0;
+        int count = 1;
+        int max = 1;
 
-        for (int i = 0; i < n; i++) {
-            if (i == 0 || arr[i] == arr[i - 1]) {
+        for (int i = 1; i < n; i++) {
+            if (arr[i] == arr[i - 1]) {
                 count++;
             } else {
                 max = Math.max(max, count);
@@ -23,6 +23,7 @@ public class Main {
             }
         }
 
+        max = Math.max(max, count);
         System.out.println(max);
     }
 }
